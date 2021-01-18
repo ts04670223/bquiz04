@@ -1,6 +1,6 @@
 <h2>第一次購物</h2>
 <a href="?do=reg">
-<img src="icon/0413.jpg" alt="">
+  <img src="icon/0413.jpg" alt="">
 </a>
 <h2>會員登入</h2>
 
@@ -15,10 +15,22 @@
   </tr>
   <tr>
     <td class="tt">驗證碼</td>
-    <td class="pp"><input type="text" name="ans" id="ans"></td>
+    <td class="pp">
+      <?php
+      $a = rand(10, 99);
+      $b = rand(10, 99);
+      $_SESSION['ans'] = $a + $b;
+      echo $a . "+" . $b . "=";
+
+      ?>
+      <input type="text" name="ans" id="ans">
+    </td>
   </tr>
 </table>
 <div class="ct">
 
-<button onclick="login()">確認</button>
+  <button onclick="login()">確認</button>
 </div>
+<script>
+
+</script>
