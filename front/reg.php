@@ -54,7 +54,7 @@
           addr,
           email
         }, function() {
-          // location.href='index.php?do=login'
+          location.href='index.php?do=login'
         })
       }
     })
