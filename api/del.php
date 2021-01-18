@@ -2,6 +2,6 @@
 
 $db=new DB($_POST['table']);
 $db->del($_POST['id']);
-echo '刪除資料';
+// echo '刪除資料';
 
 ?>

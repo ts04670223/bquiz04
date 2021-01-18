@@ -4,9 +4,9 @@ function lof(x)
 	location.href=x
 }
 function del(table,id){
-	$.post("api/del.php",{table,id},function(res){
-		console.log(res);
-		// location.reload();
+	$.post("api/del.php",{table,id},function(){
+		// console.log(res);
+		location.reload();
 	})
 }
 function login(table) {
