@@ -29,7 +29,7 @@
 </table>
 <div class="ct">
 
-  <button onclick="login()">確認</button>
+  <button onclick="login('mem')">確認</button>
 </div>
 <script>
 
