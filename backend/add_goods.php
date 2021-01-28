@@ -53,7 +53,7 @@ getBigs();
 function getBigs(){
     $.get("api/get_big.php",function(bigs){
       $("#big").html(bigs);
-      getMids($("#big").val());
+      getMids();
     })
 }
 
