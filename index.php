@@ -1,14 +1,21 @@
 <?php
 include_once "base.php";
+if (isset($_GET['do']) && $_GET['do'] == 'buycart') {
+        if (isset($_GET['goods'])) {
+                $_SESSION['cart'][$_GET['goods']] = $_GET['qt'];
+        }
+        if (empty($_SESSION['mem'])) {
+                to("?do=login");
+                exit();
+        }
+}
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0039) -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
         <title>┌精品電子商務網站」</title>
         <link href="css/css.css" rel="stylesheet" type="text/css">
         <script src="js/js.js"></script>
@@ -27,8 +34,7 @@ include_once "base.php";
                                 <a href="index.php?do=news">最新消息</a> |
                                 <a href="index.php?do=look">購物流程</a> |
                                 <a href="index.php?do=buycart">購物車</a> |
-                                <?php if (empty($_SESSION['mem'])) {
-                                ?>
+                                <?php if (empty($_SESSION['mem'])) { ?>
                                         <a href="index.php?do=login">會員登入</a> |
                                 <?php
                                 } else {
@@ -60,14 +66,13 @@ include_once "base.php";
                                 ?>
                                         <div class='ww'>
                                                 <a href="?big=<?= $big['id']; ?>"><?= $big['name']; ?>(<?= $Goods->count(['big' => $big['id']]); ?>)</a>
-
                                                 <?php
                                                 $mids = $Type->all(['parent' => $big['id']]);
                                                 if (count($mids) > 0) {
                                                         echo "<div class='s'>";
                                                         foreach ($mids as $mid) {
                                                 ?>
-                                                                <a class="bb" href="?big=<?= $big['id']; ?>&mid=<?=$mid['id'];?>"><?= $mid['name']; ?> (<?= $Goods->count(['mid' => $mid['id']]); ?>)</a>
+                                                                <a class="bb" href="?big=<?= $big['id']; ?>&mid=<?= $mid['id']; ?>"><?= $mid['name']; ?> (<?= $Goods->count(['mid' => $mid['id']]); ?>)</a>
                                         <?php
                                                         }
                                                         echo "</div>";
@@ -96,7 +101,6 @@ include_once "base.php";
                         <div id="bottom" style="line-height:70px;background:url(icon/bot.png); color:#FFF;" class="ct">
                                 <?= $Bottom->find(1)['bottom']; ?> </div>
                 </div>
-
 </body>
 
 </html>
