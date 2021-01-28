@@ -3,15 +3,17 @@
 <table class="all">
 <tr></tr>
   <td class="tt">所屬大分類</td>
-  <td class="pp"><select name="big" id="big"></select></td>
+  <td class="pp"><select name="big" id="big" onchange="getMids()"></select>
+  </td>
 </tr>
 <tr>
   <td class="tt">所屬中分類</td>
-  <td class="pp"><select name="mid" id="mid"></select></td>
+  <td class="pp"><select name="mid" id="mid"></select>
+  </td>
 </tr>
 <tr>
   <td class="tt">商品編號</td>
-  <td class="pp"><input type="text" name="num"></td>
+  <td class="pp">完成分類後自動分配</td>
 </tr>
 <tr>
   <td class="tt">商品名稱</td>
@@ -44,3 +46,21 @@
 <input type="button" value="返回" onclick="history.go(-1)">
 </div>
 </form>
+
+<script>
+getBigs();
+
+function getBigs(){
+    $.get("api/get_big.php",function(bigs){
+      $("#big").html(bigs);
+      getMids($("#big").val());
+    })
+}
+
+function getMids(){
+  $.get("api/get_mid.php",{bigId:$("#big").val()},function(mids){
+      $("#mid").html(mids);
+  })
+
+}
+</script>
