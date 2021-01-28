@@ -53,7 +53,7 @@ include_once "base.php";
                 <div id="left" class="ct">
                         <div style="min-height:400px;">
                                 <!-- 選單 -->
-                                <a href="?big=0">全部商品(<?= $Goods->count(); ?>)</a>
+                                <a href="?">全部商品(<?= $Goods->count(); ?>)</a>
                                 <?php
                                 $bigs = $Type->all(['parent' => 0]);
                                 foreach ($bigs as $big) {
@@ -67,7 +67,7 @@ include_once "base.php";
                                                         echo "<div class='s'>";
                                                         foreach ($mids as $mid) {
                                                 ?>
-                                                                <a href="?big=<?= $big['id']; ?>" (<?= $Goods->count(['mid' => $mid['id']]); ?>)><?= $mid['name']; ?></a>
+                                                                <a class="bb" href="?big=<?= $big['id']; ?>&mid=<?=$mid['id'];?>"><?= $mid['name']; ?> (<?= $Goods->count(['mid' => $mid['id']]); ?>)</a>
                                         <?php
                                                         }
                                                         echo "</div>";

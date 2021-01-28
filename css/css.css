@@ -35,6 +35,15 @@ body
 	margin:10px auto 10px auto;
 	color:#65350A;
 }
+#left a.bb
+{
+	display:block;
+	padding:20px 5px 20px 5px;
+	text-decoration:none;
+	background:#f7fa55;
+	margin:10px auto 10px auto;
+	color:#65350A;
+}
 .ct
 {
 	text-align:center;
@@ -44,8 +53,9 @@ body
 	display:inline-block;
 	width:65%;
 	padding:2%;
-	min-height:550px;
+	height:550px;
 	border:#000 1px solid;
+	overflow: auto;
 }
 #bottom
 {
