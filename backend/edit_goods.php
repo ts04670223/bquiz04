@@ -7,7 +7,7 @@ $goods = $Goods->find($_GET['id']);
   <table class="all">
     <tr></tr>
     <td class="tt">所屬大分類</td>
-    <td class="pp"><select name="big" id="big"></select></td>
+    <td class="pp"><select name="big" id="big" onchange="getMids()"></select></td>
     </tr>
     <tr>
       <td class="tt">所屬中分類</td>
