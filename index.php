@@ -1,5 +1,7 @@
 <?php
 include_once "base.php";
+
+// 遇到header重覆傳送時
 if (isset($_GET['do']) && $_GET['do'] == 'buycart') {
         if (isset($_GET['goods'])) {
                 $_SESSION['cart'][$_GET['goods']] = $_GET['qt'];
