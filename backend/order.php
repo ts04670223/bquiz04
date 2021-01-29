@@ -1,5 +1,5 @@
 <h2 class="ct">訂單管理</h2>
-<div class="ct"><button onclick="lof('?do=add_admin')">新增管理者</button>
+<div class="ct">
 </div>
 <table class="all">
   <tr class="tt ct">
