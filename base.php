@@ -6,8 +6,9 @@ $Bottom=new DB('bottom');
 $Mem=new DB('mem');
 $Admin=new DB('admin');
 $Type=new DB('type');
-
 $Goods=new DB('goods');
+
+$Ord=new DB('ord');
 class DB{
   protected $table;
   protected $dsn="mysql:host=localhost;dbname=db44;charset=utf8";
