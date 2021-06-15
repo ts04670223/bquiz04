@@ -1,5 +1,5 @@
 <?php
-$ord=$Ord->find(['acc'=>$_SESSION['mem']]);
+$ord=$Ord->find(['id'=>$_GET['id']]);
 
 ?>
 <h2 class="ct">訂單編號<span style="color:red"><?=$ord['num'];?></span>的詳細資料</h2>
