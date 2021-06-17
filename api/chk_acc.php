@@ -1,9 +1,11 @@
 <?php include_once "../base.php";
 
 $acc=$_GET['acc'];
-
-$chk=$Mem->count(['acc'=>$acc]);
-
-return $chk;
+$chk=$Mem->find(['acc'=>$acc]);
+if(!empty($chk)){
+    echo 1;
+}else{
+    echo 0;
+}
 
 ?>

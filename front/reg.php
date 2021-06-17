@@ -65,7 +65,7 @@
     $.get('api/chk_acc.php', {
       acc
     }, function(res) {
-      if (parseInt(res) || acc == 'admin') {
+      if (res==1  || acc == 'admin') {
         alert("帳號已被使用")
       } else {
         alert("此帳號可使用")
